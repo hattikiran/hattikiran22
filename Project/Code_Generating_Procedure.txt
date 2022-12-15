@@ -1,0 +1,86 @@
+ARMSTRONG FLUID TECHNOLOGY LTD ©
+
+=> Steps to Generate the Project
+
+	1.	Open DEOS_V2.ioc file in DEOS_V2->project.
+	2.	Edit the pins that are needed or add the software components that are needed.
+	3.	Save and generate the code. The code will be generated in the DEOS_V2->Project.
+	4.	Compare the code with DEOS_V2 main project and move code that is required from 
+		DEOS_V2->Project folder to DEOS_V2.
+		
+=> Steps to change the Project name (ex. DEOS_V2.00.xx to DEOS_V2.00.yy)
+
+	1.  Remove the project from the STMcubeIDE explorer.
+	2.  In main project Change following files
+			i)  .mxproject  => change all DEOS_V2.00.xx to DEOS_V2.00.yy
+		 	ii) .project	=> change all DEOS_V2.00.xx to DEOS_V2.00.yy
+	3.  In CM4 folder
+			i) 	.cproject	=> change all DEOS_V2.00.xx to DEOS_V2.00.yy
+			ii)	.project	=> change all DEOS_V2.00.xx to DEOS_V2.00.yy
+	4.  In CM7
+		 	i) 	.cproject	=> change all DEOS_V2.00.xx to DEOS_V2.00.yy
+		 	ii)	.project	=> change all DEOS_V2.00.xx to DEOS_V2.00.yy
+	5.  Delete the DEOS_V2.00.xx.ioc link file in DEOS_V2.00.xx folder.
+	6.  Rename DEOS_V2.00.xx.ioc file to DEOS_V2.00.yy.ioc 
+	    in DEOS_V2.00.xx->Project folder.
+	7.  Recreate the link file by following the below steps.
+		 	i)   	Right click to DEOS_V2.00.xx folder and add the file  ->New->File.
+		 	ii) 	Click 'Advanced' button.
+		 	iii)	Check  'Link to File in the File System'  checkbox.
+		 	iv)		Click button 'browse'
+		 	v)		choose the DEOS_V2.00.yy.ioc file from 
+		
+	8.  Recreate the .ioc link file in the DEOS_V2.00.yy
+	9.  Change the main folder name from DEOS_V2.00.xx to DEOS_V2.00.yy.
+	10. Import the project to STMCubeIDE and compile the code to see there are no errors.
+
+Files Movement
+
+||---------------------------------------------------------------------------------------||
+||---------------------------------------------------------------------------------------||
+||	FILES					|		FROM					|			TO			   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+||---------------------------------------------------------------------------------------||
+||	main.h					|	CMX/Core/Inc				|		Application		   	 ||
+||	main.c					|	CMX/Core/Src				|		Application			 ||
+||---------------------------------------------------------------------------------------||
+|| startup_stm32h757xihx.s	|	CMX/Core/Startup			|		BSP/STM32H7XX	   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+|| stm32h7xx_hal_conf.h		|	CMX/Core/Inc				|		BSP/STM32H7XX	 	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+|| stm32h7xx_hal_msp.c		|	CMX/Core/Src				|		BSP/STM32H7XX	   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+|| stm32h7xx_it.c			|	CMX/Core/Src				|		BSP/STM32H7XX	   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+|| stm32h7xx_it.h			|	CMX/Core/Inc				|		BSP/STM32H7XX	   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+|| sysmem.c					|	CMX/Core/Src				|		BSP/STM32H7XX	   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+|| syscalls.c				|	CMX/Core/Src				|		BSP/STM32H7XX	   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+||system_stm32h7xx_\		|	CMX/Common/Src				|		BSP/STM32H7XX	   	 ||
+||dualcore_boot_cm4_cm7.c	|								|							 ||
+||---------------------------------------------------------------------------------------||
+||							|								|						   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+||							|								|						   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+||							|								|						   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+||							|								|						   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||
+||							|								|						   	 ||
+||							|								|							 ||
+||---------------------------------------------------------------------------------------||

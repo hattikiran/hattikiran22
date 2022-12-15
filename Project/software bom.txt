@@ -1,0 +1,6 @@
+
+
+	Library				Version #
+STM32 Cube HAL H7		1.10.0
+Azure RTOS				6.1.11
+CMSIS					5.2.0???
